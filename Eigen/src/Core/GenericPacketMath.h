@@ -642,10 +642,10 @@ inline void palign(PacketType& first, const PacketType& second)
 #if !defined(EIGEN_GPUCC)
 
 template<> inline std::complex<float> pmul(const std::complex<float>& a, const std::complex<float>& b)
-{ return std::complex<float>(real(a)*real(b) - imag(a)*imag(b), imag(a)*real(b) + real(a)*imag(b)); }
+{ return std::complex<float>(std::real(a)*std::real(b) - std::imag(a)*std::imag(b), std::imag(a)*std::real(b) + std::real(a)*std::imag(b)); }
 
 template<> inline std::complex<double> pmul(const std::complex<double>& a, const std::complex<double>& b)
-{ return std::complex<double>(real(a)*real(b) - imag(a)*imag(b), imag(a)*real(b) + real(a)*imag(b)); }
+{ return std::complex<double>(std::real(a)*std::real(b) - std::imag(a)*std::imag(b), std::imag(a)*std::real(b) + std::real(a)*std::imag(b)); }
 
 #endif
 
